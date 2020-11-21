@@ -1,57 +1,39 @@
-_Acá va un párrafo que describa lo que es el proyecto_
+# MOTOR DE BÚSQUEDA 🚀
 
-## Comenzando 🚀
+_Trabajo final EDA - Maestría en CC - Unsa_
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+_Alum. Irwin L. Yauri Orihuela_
 
 
-### Pre-requisitos 📋
+## 1.	INTRODUCCIÓN 🚀
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Elaborar un motor de búsqueda que permita recuperar información del DataSet de **Wikipedia**._
 
-```
-Da un ejemplo
-```
+### 1.1.	DataSet Wikipedia 📋
 
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
+_Todo el contenido de Wikipedia se encuentra disponible bajo un cierto esquema de licenciamiento que permite que sea copiado, modificado y redistribuido con pocas restricciones. Se encuentra en formato  ZIM (en inglés, Zeno IMprove, en español, Zeno MEjorado). El formato permite la compresión de artículos, cuenta con un índice de búsqueda de texto completo y categorías. El original xml Wikipedia en enero de 2012 contaba con unos 3,8 millones de artículos con imágenes, tenía un tamaño de 7,5 GiB mientras que el archivo ZIM equivalente era de 9.7 GiB (aproximadamente un 30% mayor). El formato de archivo abierto openZIM ofrece apoyo a un lector de ZIM de código abierto._
 
 ```
-Da un ejemplo
+https://es.wikipedia.org/wiki/Wikipedia:Descargas
 ```
 
-_Y repite_
+### 1.2.	Motor de búsqueda 📋
 
-```
-hasta finalizar
-```
+_Un motor de búsqueda es una herramienta que permite a los usuarios localizar información de manera rápida y sencilla. Cada motor de búsqueda utiliza diferentes fórmulas matemáticas complejas para generar resultados de búsqueda. Los algoritmos de los motores de búsqueda toman los elementos clave de una página web, incluido el título de la página, el contenido y la densidad de palabras clave. Los motores de búsqueda solo "ven" el texto en las páginas web y utilizan la estructura HTML subyacente para determinar la relevancia. Las fotos grandes o la animación Flash dinámica no significan nada para los motores de búsqueda, pero el texto real de las páginas sí._
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+### 1.3.	Procesamiento del Lenguaje Natural (NLP) 📋
 
-## Ejecutando las pruebas ⚙️
+_Es una disciplina con una larga trayectoria. Nace en la década de 1960, como un subárea de la Inteligencia Artificial y la Lingüística, con el objeto de estudiar los problemas derivados de la generación y comprensión automática del lenguaje natural.
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+En sus orígenes, sus métodos tuvieron gran aceptación y éxito, no obstante, cuando sus aplicaciones fueron llevadas a la práctica, en entornos no controlados y con vocabularios genéricos, empezaron a surgir multitud de dificultades. Entre ellas, pueden mencionarse por ejemplo los problemas de polisemia y sinonimia.
 
-### Analice las pruebas end-to-end 🔩
+En los últimos años, las aportaciones que se han hecho desde este dominio han mejorado sustancialmente, permitiendo el procesamiento de ingentes cantidades de información en formato texto con un grado de eficacia aceptable. Muestra de ello es la aplicación de estas técnicas como una componente esencial en los **MOTORES DE BÚSQUEDA WEB**, en las herramientas de traducción automática, o en la generación automática de resúmenes._
 
-_Explica que verifican estas pruebas y por qué_
 
-```
-Da un ejemplo
-```
 
-### Y las pruebas de estilo de codificación ⌨️
+## 2.	EL PROCESAMIENTO DEL LENGUAJE NATURAL EN LA RECUPERACIÓN DE INFORMACIÓN TEXTUAL 🚀
 
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
+_La complejidad asociada al lenguaje natural cobra especial relevancia cuando necesitamos recuperar información textual que satisfaga la necesidad de información de un usuario. Es por ello, que en el área de Recuperación de Información Textual las técnicas de NLP son muy utilizadas, tanto para facilitar la descripción del contenido de los documentos, como para representar la consulta formulada por el usuario, y ello, con el objetivo de comparar ambas descripciones y presentar al usuario aquellos documentos que satisfagan en mayor grado su necesidad de información._
 
 ## Despliegue 📦
 
