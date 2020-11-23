@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block resultado %}   
+    <div class="mw-parser-output">   
+        {% if corrector != "" %}
+            <p class="gqLncc card-section KDCVqf" aria-level="3" role="heading">
+                <span>Quizás quisiste decir:</span> <a href="/{{corrector}}"><b>{{corrector}}</a>
+            </p>     
+        {% endif %}        
+        <p>
+            <b>{{cadena}}</b> <span style="color: #7d7d7d;">puede hacer referencia a:</span>  
+        </p>        
+        <ul>
+            {% for rpt in rpt %}        
+                <li><b><a href="resIndividual/{{rpt.indice}}" title="{{rpt.titulo}}">{{rpt.titulo}}</a></b></li>                
+            {% endfor %}
+        </ul>    
+    </div> 
+    
+    <hr>
+    <iframe src="resultado/{{mejor}}" title="W3Schools Free Online Web Tutorials" width="100%" height="10000px" style="border: 0px;background-color: #ececec;padding: 0px 20px;">
+    </iframe>
+{% endblock %}

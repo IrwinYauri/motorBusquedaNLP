@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor de busqueda por contenido para el dataset de wikipedia.</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <br>
+    
+    <div class="container">
+        <div class="form-group">
+            <div class="alert alert-info">
+                <strong>Proyecto I: </strong> Implementar un motor de busqueda por contenido para el dataset de wikipedia. https://es.wikipedia.org/wiki/Wikipedia:Descargas
+            </div>        
+        </div>
+        <form action="/" method="POST">
+            <div class="input-group mb-3">            
+                <a class="btn btn-primary" href="/"><i class="fa fa-home"></i></a>&nbsp&nbsp 
+                <input type="text" class="form-control" name="q" value="" placeholder="Ingrese texto">
+                <div class="input-group-append">                    
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </div>            
+            </div>
+        </form>
+        
+        <hr>
+
+        {% block resultado %}
+        {% endblock %}
+
+        {% block resultado2 %}
+        {% endblock %}
+    </div>
+    
+
+    
+</body>
+</html>
