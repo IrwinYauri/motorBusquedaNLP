@@ -131,8 +131,64 @@ Al trabajar con vectores se puede calcular el producto escalar entre los documen
 ```
 Imagen 12: Similitud Coseno
 ```
+## 3.	ESTRUCTURA DEL PROYECTO
 
-## 3. SUGERENCIAS🚀
+### 3.1.	DATA
+*	___matrizdispercion100000_0.npz: Almacena la matriz de dispersión
+*	___matrizdispercionInv100000_0.csv: Almacena la matriz de dispersión inversa.
+*	big.txt: Almacena un libro que utiliza como vocabulario para corregir las cadenas buscadas.
+*	DFdatalWiki_completo100000.dat: Almacena las páginas web completas.
+*	DFdatalWiki_limpio100000.csv: Almacena la data limpia de ruido.
+*	wikipedia_es_all_nopic_2020-09.zim: Es el dataset de Wikipedia con todas las páginas web.
+
+### 3.2.	TEMPLATES
+*	base.html
+*	home.html
+*	inicio.html
+*	resIndividual.html
+
+### 3.3.	TRATAMIENTO
+*	Zimscan: Librería para leer el dataset de wikipedia
+*	autocorrector.py: Clase para corregir los Querys buscados.
+*	depurador.py: Clase para eliminar el ruido del dataset
+*	generarmatrizDispercion.py: Algoritmo para poder generar y almacenar la matriz de dispersión.
+*	trabajarData.py: Algoritmo para guardar el dataset de Wikipedia en un formato .dat.
+
+### 3.4.	RAIZ: 
+*	controlador.py: Clase que inicializa las rutas de acceso a los datos
+  *	buscar: Función que permite buscar el Query.
+  *	vectorizarQuery: Función que permite vectorizar el query.
+  *	getPagina: Función que permite ubicar el código de una página según el índice.
+*	index.py: Hoja para routear las urls según el framework flask.
+
+## 4.	ESTRUCTURA DE DATOS🚀
+
+Para el proyecto se hizo un análisis de rendimiento para determinar la estructura adecuada para la recuperación de datos. Como prueba se realizó una búsqueda en 100000 registros y se obtuvo los siguientes resultados:
+
+### 1.1.	DataFrame: Los dataframes son una clase de objetos especial donde cada fila corresponde a un objeto de la muestra y cada columna a una variable. Un dataframe es muy similar a la de una matriz. Pero en una matriz solamente se admiten valores numéricos, a diferencia de la matriz, en un dataframe se puede incluir también datos alfanuméricos en su contenido.
+ 
+```
+	Tiempo de ejecución: 53.968310832977295 segundos.
+```
+### 1.2.	Zim: El formato de archivo ZIM es un formato de archivo abierto que almacena contenido wiki para su uso sin conexión. El formato permite la compresión de artículos, presenta un índice de búsqueda de texto completo y un manejo nativo de categorías e imágenes similar a MediaWiki, y todo el archivo se puede indexar y leer fácilmente con un programa como Kiwix, a diferencia de los volcados de bases de datos XML nativos de Wikipedia.
+
+```
+	Tiempo de ejecución: 31.599377870559692 segundos.
+```
+### 1.3.	Nemmap: Es un mapa de memoria para una matriz almacenada en un archivo binario en el disco. Los archivos asignados en memoria se utilizan para acceder a pequeños segmentos de archivos grandes en el disco, sin leer el archivo completo en la memoria. Los memmap de Numpy son objetos en forma de matriz. Esto difiere del módulo mmap de Python, que usa objetos similares a archivos.
+
+```  
+	Tiempo de ejecución: 0.04995560646057129 segundos.
+```
+
+Se puede notar después de la evaluación que el formato más adecuado para la recuperación de información es Nemmap; la dificultad que presenta, es el espacio de memoria que ocupa el archivo, a diferencia de un dataframe que es mucho menor, pero el tiempo de recuperación es mayor.
+Para el almacenamiento de la matriz dispersa, utilizamos los Matrix Sparse, porque después de leer varios post notamos que es utilizado frecuentemente para estos trabajos. 
+ 
+Fragmento de código para guardar un archivo sparce matrix.
+Y para el almacenamiento de la matriz inversa con el que podemos vectorizar la consulta utilizamos los dataframe ya que nos ofrece un formato ligero y nos permite manejar cabeceras. También lo utilizamos para almacenar la data tratada, sin ruido, preprocesada, que nos servirá para generar la matriz dispersa.
+
+
+## 5. SUGERENCIAS🚀
 
 * Para un proceso de búsqueda más rápido se sugiere generar la matriz de incidencia antes de correr el programa. Es decir almacenarlo en un dataframe o matriz sparse en forma inversa.
 
