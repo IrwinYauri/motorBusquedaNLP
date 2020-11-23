@@ -191,7 +191,7 @@ Fragmento de código para guardar un archivo sparce matrix.
 Y para el almacenamiento de la matriz inversa con el que podemos vectorizar la consulta utilizamos los dataframe ya que nos ofrece un formato ligero y nos permite manejar cabeceras. También lo utilizamos para almacenar la data tratada, sin ruido, preprocesada, que nos servirá para generar la matriz dispersa.
 
 
-## 5. SUGERENCIAS🚀
+## 5. SUGERENCIAS
 
 * Para un proceso de búsqueda más rápido se sugiere generar la matriz de incidencia antes de correr el programa. Es decir almacenarlo en un dataframe o matriz sparse en forma inversa.
 
@@ -229,7 +229,7 @@ Feedback implícito: En este caso la relevancia de los documentos se infiere en 
 •	Clasificación de documentos.
 ```
 
-## 4. LINKS 🎁
+## 4. LINKS 
 
 *	https://es.wikipedia.org/wiki/Wikipedia:Descargas
 *	https://pypi.org/project/zimscan/
