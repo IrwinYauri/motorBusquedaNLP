@@ -1,15 +1,15 @@
-# MOTOR DE BÚSQUEDA 🚀
+# MOTOR DE BÚSQUEDA
 
 _Trabajo final EDA - Maestría en CC - Unsa_
 
 _Alum. Irwin L. Yauri Orihuela_
 
 
-## 1.	INTRODUCCIÓN 🚀
+## 1.	INTRODUCCIÓN 
 
 _Elaborar un motor de búsqueda que permita recuperar información del DataSet de **Wikipedia**._
 
-### 1.1.	DataSet Wikipedia 📋
+### 1.1.	DataSet Wikipedia 
 
 _Todo el contenido de Wikipedia se encuentra disponible bajo un cierto esquema de licenciamiento que permite que sea copiado, modificado y redistribuido con pocas restricciones. Se encuentra en formato  ZIM (en inglés, Zeno IMprove, en español, Zeno MEjorado). El formato permite la compresión de artículos, cuenta con un índice de búsqueda de texto completo y categorías. El original xml Wikipedia en enero de 2012 contaba con unos 3,8 millones de artículos con imágenes, tenía un tamaño de 7,5 GiB mientras que el archivo ZIM equivalente era de 9.7 GiB (aproximadamente un 30% mayor). El formato de archivo abierto openZIM ofrece apoyo a un lector de ZIM de código abierto._
 
@@ -17,11 +17,11 @@ _Todo el contenido de Wikipedia se encuentra disponible bajo un cierto esquema d
 https://es.wikipedia.org/wiki/Wikipedia:Descargas
 ```
 
-### 1.2.	Motor de búsqueda 📋
+### 1.2.	Motor de búsqueda 
 
 _Un motor de búsqueda es una herramienta que permite a los usuarios localizar información de manera rápida y sencilla. Cada motor de búsqueda utiliza diferentes fórmulas matemáticas complejas para generar resultados de búsqueda. Los algoritmos de los motores de búsqueda toman los elementos clave de una página web, incluido el título de la página, el contenido y la densidad de palabras clave. Los motores de búsqueda solo "ven" el texto en las páginas web y utilizan la estructura HTML subyacente para determinar la relevancia. Las fotos grandes o la animación Flash dinámica no significan nada para los motores de búsqueda, pero el texto real de las páginas sí._
 
-### 1.3.	Procesamiento del Lenguaje Natural (NLP) 📋
+### 1.3.	Procesamiento del Lenguaje Natural (NLP) 
 
 _Es una disciplina con una larga trayectoria. Nace en la década de 1960, como un subárea de la Inteligencia Artificial y la Lingüística, con el objeto de estudiar los problemas derivados de la generación y comprensión automática del lenguaje natural.
 
@@ -31,7 +31,7 @@ En los últimos años, las aportaciones que se han hecho desde este dominio han 
 
 
 
-## 2.	EL PROCESAMIENTO DEL LENGUAJE NATURAL EN LA RECUPERACIÓN DE INFORMACIÓN TEXTUAL 🚀
+## 2.	EL PROCESAMIENTO DEL LENGUAJE NATURAL EN LA RECUPERACIÓN DE INFORMACIÓN TEXTUAL 
 
 _La complejidad asociada al lenguaje natural cobra especial relevancia cuando necesitamos recuperar información textual que satisfaga la necesidad de información de un usuario. Es por ello, que en el área de Recuperación de Información Textual las técnicas de NLP son muy utilizadas, tanto para facilitar la descripción del contenido de los documentos, como para representar la consulta formulada por el usuario, y ello, con el objetivo de comparar ambas descripciones y presentar al usuario aquellos documentos que satisfagan en mayor grado su necesidad de información._
 
@@ -46,7 +46,7 @@ _Un sistema de recuperación de información textual lleva a cabo las siguientes
 Imagen 1: Arquitectura de un sistema de recuperación de información.
 ```
 
-### 2.1.	Procesamiento estadístico del lenguaje natural 📦
+### 2.1.	Procesamiento estadístico del lenguaje natural 
 
 El procesamiento estadístico del lenguaje natural  representa el modelo clásico de los sistemas de recuperación de información, y se caracteriza porque cada documento está descrito por un conjunto de palabras clave denominadas términos índice.
 
@@ -161,24 +161,27 @@ Imagen 12: Similitud Coseno
   *	getPagina: Función que permite ubicar el código de una página según el índice.
 *	index.py: Hoja para routear las urls según el framework flask.
 
-## 4.	ESTRUCTURA DE DATOS🚀
+## 4.	ESTRUCTURA DE DATOS
 
 Para el proyecto se hizo un análisis de rendimiento para determinar la estructura adecuada para la recuperación de datos. Como prueba se realizó una búsqueda en 100000 registros y se obtuvo los siguientes resultados:
 
-### 1.1.	DataFrame: Los dataframes son una clase de objetos especial donde cada fila corresponde a un objeto de la muestra y cada columna a una variable. Un dataframe es muy similar a la de una matriz. Pero en una matriz solamente se admiten valores numéricos, a diferencia de la matriz, en un dataframe se puede incluir también datos alfanuméricos en su contenido.
+### 1.1.	DataFrame: 
+Los dataframes son una clase de objetos especial donde cada fila corresponde a un objeto de la muestra y cada columna a una variable. Un dataframe es muy similar a la de una matriz. Pero en una matriz solamente se admiten valores numéricos, a diferencia de la matriz, en un dataframe se puede incluir también datos alfanuméricos en su contenido.
  
 ```
-	Tiempo de ejecución: 53.968310832977295 segundos.
+Tiempo de ejecución: 53.968310832977295 segundos.
 ```
-### 1.2.	Zim: El formato de archivo ZIM es un formato de archivo abierto que almacena contenido wiki para su uso sin conexión. El formato permite la compresión de artículos, presenta un índice de búsqueda de texto completo y un manejo nativo de categorías e imágenes similar a MediaWiki, y todo el archivo se puede indexar y leer fácilmente con un programa como Kiwix, a diferencia de los volcados de bases de datos XML nativos de Wikipedia.
+### 1.2.	Zim: 
+El formato de archivo ZIM es un formato de archivo abierto que almacena contenido wiki para su uso sin conexión. El formato permite la compresión de artículos, presenta un índice de búsqueda de texto completo y un manejo nativo de categorías e imágenes similar a MediaWiki, y todo el archivo se puede indexar y leer fácilmente con un programa como Kiwix, a diferencia de los volcados de bases de datos XML nativos de Wikipedia.
 
 ```
-	Tiempo de ejecución: 31.599377870559692 segundos.
+Tiempo de ejecución: 31.599377870559692 segundos.
 ```
-### 1.3.	Nemmap: Es un mapa de memoria para una matriz almacenada en un archivo binario en el disco. Los archivos asignados en memoria se utilizan para acceder a pequeños segmentos de archivos grandes en el disco, sin leer el archivo completo en la memoria. Los memmap de Numpy son objetos en forma de matriz. Esto difiere del módulo mmap de Python, que usa objetos similares a archivos.
+### 1.3.	Nemmap: 
+Es un mapa de memoria para una matriz almacenada en un archivo binario en el disco. Los archivos asignados en memoria se utilizan para acceder a pequeños segmentos de archivos grandes en el disco, sin leer el archivo completo en la memoria. Los memmap de Numpy son objetos en forma de matriz. Esto difiere del módulo mmap de Python, que usa objetos similares a archivos.
 
 ```  
-	Tiempo de ejecución: 0.04995560646057129 segundos.
+Tiempo de ejecución: 0.04995560646057129 segundos.
 ```
 
 Se puede notar después de la evaluación que el formato más adecuado para la recuperación de información es Nemmap; la dificultad que presenta, es el espacio de memoria que ocupa el archivo, a diferencia de un dataframe que es mucho menor, pero el tiempo de recuperación es mayor.
